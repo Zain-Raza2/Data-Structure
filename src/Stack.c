@@ -47,11 +47,10 @@ void  printPop(struct Stack* stack)
 
 void testStack(struct Stack* stack, int stackLength, int rMax)
 {
-    for (int i; i < stackLength; i++)
-    {
+    for (int i = 0; i < stackLength; i++) {
         int rint = rand();
         printPush(stack, rint % rMax);
+    } for (int i = 0; i < stackLength; i++) {
         printPop(stack);
     }
-
 }

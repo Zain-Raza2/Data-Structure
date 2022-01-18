@@ -6,7 +6,7 @@
 int main()
 {
     srand(time(NULL));
-    struct Stack* stack = createStack(1);
+    struct Stack* stack = createStack(5);
     testStack(stack, 5, 100);
     return 0;
 }
