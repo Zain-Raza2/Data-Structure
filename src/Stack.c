@@ -44,3 +44,14 @@ void  printPop(struct Stack* stack)
 {
     printf(KRED "%d popped from stack\n", pop(stack));
 }
+
+void testStack(struct Stack* stack, int stackLength, int rMax)
+{
+    for (int i; i < stackLength; i++)
+    {
+        int rint = rand();
+        printPush(stack, rint % rMax);
+        printPop(stack);
+    }
+
+}

@@ -27,4 +27,6 @@ void printPush(struct Stack* stack, int item);
 
 void  printPop(struct Stack* stack);
 
+void testStack(struct Stack* stack, int stackLength, int rMax);
+
 #endif
