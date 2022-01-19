@@ -4,13 +4,13 @@
 struct Queue {
     unsigned capacity;
     int* front;
-    int* back;
+    int* rear;
     int* array;
 };
 
 struct Queue* createQueue(unsigned capacity);
 
-void enQueeu(struct Stack* stack, int value);
+void enQueue(struct Stack* stack, int value);
 
 void deQueue(struct Stack* stack, int value);
 

@@ -3,35 +3,47 @@
 
 struct Stack* createStack(unsigned capacity)
 {
-     struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
-     stack->capacity = capacity;
-     stack->top = -1;
-     stack->array = (int*)malloc(stack->capacity * sizeof(int));
-     return stack;
+    struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
+    stack->capacity = capacity;
+    stack->top = -1;
+    stack->array = (int*)malloc(stack->capacity * sizeof(int));
+    return stack;
 }
 
 int isFull(struct Stack* stack)
 {
-    return stack->top == stack->capacity - 1;
+    if (stack->top == stack->capacity - 1)
+        return 1;
+    else 
+        return 0;
 }
 
 int isEmpty(struct Stack* stack)
 {
-    return stack->top == -1;
+    if (stack->top == -1)
+        return 1;
+    else
+        return 0;
 }
 
 void push(struct Stack* stack, int item)
 {
-    if (isFull(stack))
-    return;
-    stack->array[++stack->top] = item;
+    if (isFull(stack)) {
+        printf("Stack Overflow, stack is full. \n");
+        return;
+    } else {
+        stack->array[++stack->top] = item;        
+    }
 }
 
 int pop(struct Stack* stack)
 {
-    if (isEmpty(stack))
-    return INT_MIN;
-    return stack->array[stack->top--];
+    if (isEmpty(stack)){
+        printf("Stack Underflow, stack is empty.\n");
+        return INT_MIN;
+    } else {
+        return stack->array[stack->top--];
+    }
 }
 
 void printPush(struct Stack* stack, int item)
