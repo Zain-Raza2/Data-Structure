@@ -10,7 +10,7 @@ struct Stack* createStack(unsigned capacity)
     return stack;
 }
 
-int isFull(struct Stack* stack)
+int isStackFull(struct Stack* stack)
 {
     if (stack->top == stack->capacity - 1)
         return 1;
@@ -18,7 +18,7 @@ int isFull(struct Stack* stack)
         return 0;
 }
 
-int isEmpty(struct Stack* stack)
+int isStackEmpty(struct Stack* stack)
 {
     if (stack->top == -1)
         return 1;
@@ -28,7 +28,7 @@ int isEmpty(struct Stack* stack)
 
 void push(struct Stack* stack, int item)
 {
-    if (isFull(stack)) {
+    if (isStackFull(stack)) {
         printf("Stack Overflow, stack is full. \n");
         return;
     } else {
@@ -38,7 +38,7 @@ void push(struct Stack* stack, int item)
 
 int pop(struct Stack* stack)
 {
-    if (isEmpty(stack)){
+    if (isStackEmpty(stack)) {
         printf("Stack Underflow, stack is empty.\n");
         return INT_MIN;
     } else {
@@ -57,12 +57,12 @@ void  printPop(struct Stack* stack)
     printf(KRED "%d popped from stack\n", pop(stack));
 }
 
-void testStack(struct Stack* stack, int stackLength, int rMax)
+void testStack(struct Stack* stack, int length, int rMax)
 {
-    for (int i = 0; i < stackLength; i++) {
+    for (int i = 0; i < length; i++) {
         int rint = rand();
         printPush(stack, rint % rMax);
-    } for (int i = 0; i < stackLength; i++) {
+    } for (int i = 0; i < length; i++) {
         printPop(stack);
     }
 }

@@ -13,9 +13,9 @@ struct Stack {
 
 struct Stack* createStack(unsigned capacity);
 
-int isFull(struct Stack* stack);
+int isStackFull(struct Stack* stack);
 
-int isEmpty(struct Stack* stack);
+int isStackEmpty(struct Stack* stack);
 
 void push(struct Stack* stack, int item);
 
@@ -27,6 +27,6 @@ void printPush(struct Stack* stack, int item);
 
 void  printPop(struct Stack* stack);
 
-void testStack(struct Stack* stack, int stackLength, int rMax);
+void testStack(struct Stack* stack, int length, int rMax);
 
 #endif
